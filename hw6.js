@@ -15,7 +15,7 @@ var bodyParser = require('body-parser');
 
 app.engine('handlebars', exphbs());
 app.set('view engine','handlebars');
-app.set('port', 6140);
+app.set('port', 6141);
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
@@ -29,7 +29,7 @@ app.get('/', (req,res)=>{
     }   
     var context = {};
     context.dataList = qParams;
-    res.render('get',context);
+    res.render('home',context);
 })
 
 app.post('/', function(req,res){
@@ -47,7 +47,7 @@ app.post('/', function(req,res){
     
     var context = {};
     context.dataList = qParams;
-    res.render('post', context);
+    res.render('home', context);
   });
 
   
