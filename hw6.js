@@ -71,17 +71,17 @@ app.get('/reset-table',function(req,res,next){
 
 
 
-var ptr = document.getElementsByTagName("body");
-var h1 = document.createElement("h1");
-var temp = document.getElementsByTagName("script"); //temp ptr;
+var ptr = Document.getElementById("body");
+var h1 = Document.createElement("h1");
+var temp = Document.getElementsByTagName("script"); //temp ptr;
 
-var table = document.createElement("table"); //create table
+var table = Document.createElement("table"); //create table
 
-var thead = document.createElement("thead");
+var thead = Document.createElement("thead");
 thead.setAttribute("id", "thead");
 table.appendChild(thead);
 
-var tbody = document.createElement("tbody");
+var tbody = Document.createElement("tbody");
 tbody.setAttribute("id", "tbody");
 table.appendChild(tbody);
 
@@ -105,7 +105,7 @@ for (let i = 0; i<4; i++){
     }
 }
 
-var cells = document.querySelectorAll("td");
+var cells = Document.querySelectorAll("td");
 for (var z = 0; z  < cells.length; z++) {
     cells[z].style.border = "thin solid";
     cells[z].style.backgroundColor = "pink";
@@ -118,10 +118,10 @@ for (var z = 0; z  < cells.length; z++) {
 
 
 function createDataRow(x){
-    var tbody = document.getElementById("tbody");
-    var dataRow = document.createElement("tr");
+    var tbody = Document.getElementById("tbody");
+    var dataRow = Document.createElement("tr");
     for(let k = 0; k<4; k++) {
-        var newTd = document.createElement("td")
+        var newTd = Document.createElement("td")
         newTd.textContent = x+ ", "+ (k+1);
         dataRow.appendChild(newTd);
     }
@@ -129,10 +129,10 @@ function createDataRow(x){
 }
 
 function createHeaderRow(){
-    var thead = document.getElementById("thead");
-    var headerRow = document.createElement("tr");
+    var thead = Document.getElementById("thead");
+    var headerRow = Document.createElement("tr");
     for(let i = 0; i < 4; i++){
-        var newTh = document.createElement("th");
+        var newTh = Document.createElement("th");
         newTh.textContent = "Header " + (i+1);
         headerRow.appendChild(newTh);
     }
