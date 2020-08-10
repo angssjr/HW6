@@ -79,7 +79,7 @@ app.listen(app.get('port'),function(){
 
 
 
-var ptr = document.getElementById("body");
+var ptr = document.getElementsByTagName("body");
 var h1 = document.createElement("h1");
 var temp = document.getElementsByTagName("script"); //temp ptr;
 
