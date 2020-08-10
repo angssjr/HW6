@@ -78,7 +78,7 @@ app.listen(app.get('port'),function(){
     
 
 
-window.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (event) => {
 
   var ptr = document.getElementsByTagName("body");
   var h1 = document.createElement("h1");
