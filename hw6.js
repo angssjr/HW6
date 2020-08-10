@@ -71,6 +71,14 @@ app.get('/reset-table',function(req,res,next){
 
 
 
+
+app.listen(app.get('port'),function(){
+    console.log('Express started on http://flip3.engr.oregonstate.edu'+app.get('port')+'; press Ctrl-C to terminate.')
+});
+    
+
+
+
 var ptr = document.getElementById("body");
 var h1 = document.createElement("h1");
 var temp = document.getElementsByTagName("script"); //temp ptr;
@@ -139,10 +147,3 @@ function createHeaderRow(){
     thead.appendChild(headerRow);
 }
 
-
-
-
-app.listen(app.get('port'),function(){
-    console.log('Express started on http://flip3.engr.oregonstate.edu'+app.get('port')+'; press Ctrl-C to terminate.')
-});
-    
