@@ -71,13 +71,47 @@ app.get('/reset-table',function(req,res,next){
 });
 
 
+    
+document.getElementById("urlSubmit1").addEventListener("click", function(event){
+var req1 = new XMLHttpRequest();
+var payload = {"CITY_NAME":null, "COUNTRY_CODE": null, "ZIP_CODE":null};
+payload.CITY_NAME = document.getElementById("CITY_NAME").value;
+payload.COUNTRY_CODE = document.getElementById("COUNTRY_CODE").value;
+payload.ZIP_CODE = document.getElementById("ZIP_CODE").value;
+//GET1
+req1.open("GET", "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q="+payload.CITY_NAME+","+payload.COUNTRY_CODE+"&appid="+ apiKey, true);
+req1.setRequestHeader("Content-Type", "application/json");
+req1.send();
+event.preventDefault();
+});
+
+
+
+//POST
+document.getElementById("urlSubmit2").addEventListener("click",function(event){
+var req3 = new XMLHttpRequest();
+var payload2 = {"Dog": "Golden Retriever",
+                "Age": "7 Human Years"};
+req3.open("POST", "https://cors-anywhere.herokuapp.com/http://httpbin.org/post", true);
+req3.setRequestHeader('Content-Type', 'application/json');
+event.preventDefault();
+req3.send(JSON.stringify(payload2));
+req3.addEventListener('load',function(){
+    if(req3.status >= 200 && req3.status < 400){
+        var response3 = JSON.parse(req3.responseText);
+        console.log(response3);
+    } else {
+        console.log("Error in network request: " + req3.statusText);
+    }
+});
+event.preventDefault();
+});
+        
+
+
 
 
 
 app.listen(app.get('port'),function(){
-    console.log('Express started on http://flip3.engr.oregonstate.edu'+app.get('port')+'; press Ctrl-C to terminate.')
-});
-    
-
-
-
+    console.log('Express started on http://flip3.engr.oregonstate.edu'+app.get('port')+'; press Ctrl-C to terminate.');
+})
